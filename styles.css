@@ -73,7 +73,7 @@ hr {
 
 /* Header */
 header {
-  background-color: rgb(138, 49, 255);
+  background: linear-gradient(#4e54c8, #8f94fb);
   padding: 20px;
   text-align: center;
 }
@@ -393,4 +393,11 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+footer {
+  background: linear-gradient( #8f94fb, #4e54c8 );
+  padding: 20px;
+  text-align: center;
+  color: white;
 }
