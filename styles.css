@@ -1,0 +1,396 @@
+/* General */
+body {
+  margin: 0;
+  background-color: rgb(139, 137, 137);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: black;
+  text-shadow: 2px 2px 2px #ffffff70;
+}
+
+h3, h4, h6 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+h3, h4 {
+  padding: 1px;
+  text-shadow: 1px 2px 1px #ffffff70;
+}
+
+p {
+  color: black;
+  font-size: 16px;
+}
+
+hr {
+  border-color: black;
+}
+
+/* Sign Up Menu Section */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 100px;
+  width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 30px 30px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content input {
+  display: block;
+  width: 80%; /* or a fixed width like 300px */
+  margin: 10px auto;
+  padding: 15px;
+  text-align: center;
+}
+
+.modal-content button {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header */
+header {
+  background-color: rgb(138, 49, 255);
+  padding: 20px;
+  text-align: center;
+}
+
+.nav-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-panel a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-panel a:hover {
+  background-color: #dcdcdc;
+}
+
+/* Full-page Sections */
+.full-page-section {
+  height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  border-top: 2px solid black;
+  background-color: rgb(72, 190, 199);
+}
+
+/* About Section */
+#about {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.226), rgba(255, 255, 255, 0.7)),
+    url('images/About\ Background\ Image.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#about h2 {
+  font-family: Georgia, serif;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.first-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 450px;
+  max-width: 900px;
+  gap: 30px;
+  background-color: #ffffffcc;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px black;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.first-section:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.first-picture,
+.second-picture {
+  flex: 1 1 300px;
+  border-radius: 30px;
+  border: 3px solid #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+
+.first-picture:hover,
+.second-picture:hover {
+  transform: scale(1.05);
+}
+
+.first-picture-text,
+.second-picture-text {
+  max-width: 400px;
+  color: #33475b;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* About Buttons */
+.about-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.about-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.about-buttons button:hover {
+  background-color: #ddd;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Placeholder Section */
+.section-text {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+/* Image Upload Section */
+#pictureUploadSection {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.226), rgba(34, 33, 33, 0.7)),
+    url('images/Pictures Background Image.gif'); /* remove backslashes */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* changed from center */
+  padding: 40px 20px;
+  width: 100%;
+  height: auto; /* key: let height grow */
+  overflow: visible; /* allow it to expand */
+}
+
+#addPictureBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+#addPictureBtn:hover {
+  background-color: #ddd;
+}
+
+#pictureInput {
+  display: none;
+}
+
+.picture-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.picture-container {
+  text-align: center;
+}
+
+.uploaded-picture {
+  width: 250px;
+  height: 300px;
+  border: 3px solid black;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 0%;
+  background-color: green;
+  margin: 10px auto 0 auto;
+  border-radius: 4px;
+  max-width: 300px;
+  transition: width 0.2s ease-in-out;
+}
+
+.remove-picture-btn {
+  display: block;
+  margin: 8px auto 0 auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.remove-picture-btn:hover {
+  background-color: #cc0000;
+}
+
+.picture-gallery::-webkit-scrollbar {
+  height: 10px;
+}
+
+.picture-gallery::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.picture-gallery::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Prayer Generator */
+#prayerGeneratorSection {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.226), rgba(34, 33, 33, 0.7)),
+    url('images/Prayers Background Image.gif'); /* remove backslashes */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.prayer-generator {
+  text-align: center;
+  margin-top: 1px;
+}
+
+#generatePrayerBtn,
+#generatePrayerBtn2 {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #4979ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#generatePrayerBtn:hover,
+#generatePrayerBtn2:hover {
+  background-color: #32afe0;
+  box-shadow: 2px 2px 2px black;
+}
+
+.prayer-output {
+  margin-top: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f0f7ff;
+  border-radius: 12px;
+  padding: 20px;
+  font-style: italic;
+  color: black;
+  font-size: 18px;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+  min-height: 100px;
+  white-space: pre-line;
+}
+
+#notesFromJhonasSection {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.226), rgba(58, 58, 58, 0.7)),
+    url('images/Notes Background Image.gif'); /* remove backslashes */
+  background-size: 100% 100%;
+  min-height: 500px; /* to fit more text just keep increasing this value */
+  max-width: 5000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

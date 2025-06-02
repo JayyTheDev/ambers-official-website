@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amber's Website</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Sign-Up Popup -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <h2>Sign Up</h2>
+      <input type="text" id="username" placeholder="Enter your name" required />
+      <input type="password" id="password" placeholder="Enter password" required />
+      <button id="signupBtn"><u>Sign Up</u></button>
+    </div>
+  </div>
+
+  <!-- Confirmation Popup -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Are you sure you want to visit this website?</h2>
+      <button id="confirmYesBtn">Yes</button>
+    </div>
+  </div>
+
+  <!-- Second Confirmation Modal -->
+  <div id="confirmModal2" class="modal hidden">
+    <div class="modal-content">
+      <h2>Are you sure??</h2>
+      <button id="confirmYesBtn2">Yes...</button>
+    </div>
+  </div>
+
+   <div id="confirmModal3" class="modal hidden">
+    <div class="modal-content">
+      <h2>Are you reallyyyy sureeee??????</h2>
+      <button id="confirmYesBtn3">Yes, I'm sure!</button>
+    </div>
+  </div>
+
+  <div id="confirmModal4" class="modal hidden">
+    <div class="modal-content">
+      <h2>Finee... Hope you like it Amber! <3 </h2>
+      <button id="confirmYesBtn4">Go</button>
+    </div>
+  </div>
+
+  <header>
+    <h1><u>~ Ambers Official Site ~</u></h1>
+    <nav class="nav-panel">
+      <ul>
+        <li><a href="#about"><u>About</u></a></li>
+        <li><a href="#pictures"><u>Pictures</u></a></li>
+        <li><a href="#prayers"><u>Prayers</u></a></li>
+        <li><a href="#notes-from-jhonas"><u>Notes From Jhonas</u></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECTION: About -->
+  <section id="about" class="full-page-section">
+    <h2><u><strong>About Amber</strong></u></h2>
+    <div class="first-section" id="aboutSlider">
+      <img id="aboutImage" src="images/Picture of Amber.jpg" width="350" height="450" class="first-picture" alt="Amber" />
+      <p id="aboutText" class="first-picture-text"></p>
+      
+    </div>
+
+    <div class="about-buttons">
+      <button id="prevAboutBtn">Previous</button>
+      <button id="nextAboutBtn">Next</button>
+    </div>
+  </section>
+
+  <!-- SECTION: Pictures -->
+  <section id="pictureUploadSection" class="full-page-section">
+    <h2><u><strong>Pictures</strong></u></h2>
+    <div id="pictures">
+
+    </div>
+
+    <div class="add-picture-container">
+      <button id="addPictureBtn">Add Picture</button>
+      <input type="file" id="pictureInput" accept="image/*" />
+      <div id="uploadProgressBar" class="progress-bar hidden"></div>
+    </div>
+
+    <div id="pictureGallery" class="picture-gallery"></div>
+  </section>
+
+  <!-- SECTION: Prayers -->
+  <section id="prayerGeneratorSection" class="full-page-section">
+    <h2><u>~ Bible Verses ~</u></h2>
+    <div id="prayers" class="prayer-generator">
+      <button id="generatePrayerBtn">Generate Bible Verse</button>
+      <div id="prayerOutput" class="prayer-output">[Your Bible verse will appear here]</div>
+    </div>
+
+    <h2><u><strong>~ Prayers from Jhonas ~</strong></u></h2>
+    <div class="prayer-generator">
+      <button id="generatePrayerBtn2">Generate Prayer</button>
+      <div id="prayerOutput2" class="prayer-output">[Your prayer will appear here]</div>
+    </div>
+  </section>
+
+  <!-- SECTION: Notes from Jhonas -->
+  <section id="notesFromJhonasSection" class="full-page-section">
+    <h2><u><strong>Notes From Jhonas</strong></u></h2>
+    <h6><u>Updated Daily</u></h6>
+    <h5><u><strong>Last Updated: 6/1/2025</strong></u></h5>
+    <br>
+    <p><u><strong>These notes are a collection of heartfelt messages from Jhonas to Amber, expressing love, gratitude, and admiration.</strong></u></p>
+    <div id="notes-from-jhonas" class="notes-container">
+      <h4><u>Note 1</u></h4>
+      <p><strong>Amber, I want you to know that you are a blessing to everyone around you. Your kindness and love shine through in everything you do. Keep being the amazing person you are!"</strong></p>
+
+      <!--
+      <h4><u>Note 2</u></h4>
+      <p><strong>Every day with you is a gift. Your smile lights up every room that you are in. I am forever grateful for everything about you.</strong></p>
+
+      <h4><u>Note 3</u></h4>
+      <p><strong>Amber I Love you truly with all my heart. Nothing can explain the kind of love that I have for you, except for Jesus himself, because only he knows the nights he saw me crying and praying dearly for you on the days of my hurting.</strong></p>
+    
+      <h4><u>Note 4</u></h4>
+      <p><strong>Please, please don't fight any battles going on in your head alone. I will always be there for you Amber. You can always talk to me about anything. I am here to go through the up's and downs with you in life, and to support you even when you're at your lowest.</strong></p>
+
+      <h4><u>Note 5</u></h4>
+      <p><strong>Amber, you're the most beautiful person I have ever met. Your heart is pure, and your spirit is unbreakable. I am so proud of you. Don't let anything stop you from being YOU.</strong></p>
+    
+      <h4><u>Note 6</u></h4>
+      <p><strong>I pray that with my presence in your life, you will always feel at peace.</strong></p>
+      
+      <h4><u>Note 7</u></h4>
+      <p><strong>If only you can see yourself the way I see you in my eyes, you would then understand how much I truly care about you.</strong></p>
+      -->
+    </div>
+  </section>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
