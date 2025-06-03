@@ -53,26 +53,59 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = "auto"; // Re-enable scrolling
   });
 
-  // --- Image Upload Elements ---
+    // --- Image Upload Elements ---
   const addPictureBtn = document.getElementById('addPictureBtn');
   const pictureInput = document.getElementById('pictureInput');
   const pictureGallery = document.getElementById('pictureGallery');
   const uploadProgressBar = document.getElementById('uploadProgressBar');
 
-  // --- Prayer Elements ---
-  const generatePrayerBtn = document.getElementById('generatePrayerBtn');
-  const prayerOutput = document.getElementById('prayerOutput');
-  const generatePrayerBtn2 = document.getElementById('generatePrayerBtn2');
-  const prayerOutput2 = document.getElementById('prayerOutput2');
+  // Key to store images in localStorage
+  const STORAGE_KEY = 'uploadedPictures';
 
-  // --- Add Picture Button ---
+  // Load saved images from localStorage and display them
+  function loadSavedImages() {
+    const savedImages = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    savedImages.forEach(dataUrl => {
+      addImageToGallery(dataUrl);
+    });
+  }
+
+  // Save the current images in the gallery to localStorage
+  function saveImagesToStorage() {
+    const images = pictureGallery.querySelectorAll('img.uploaded-picture');
+    const dataUrls = Array.from(images).map(img => img.src);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(dataUrls));
+  }
+
+  // Helper to create and append image + remove button to gallery
+  function addImageToGallery(dataUrl) {
+    const pictureContainer = document.createElement('div');
+    pictureContainer.className = 'picture-container';
+
+    const img = document.createElement('img');
+    img.src = dataUrl;
+    img.className = 'uploaded-picture';
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove';
+    removeBtn.className = 'remove-picture-btn';
+
+    removeBtn.addEventListener('click', () => {
+      pictureGallery.removeChild(pictureContainer);
+      saveImagesToStorage();
+    });
+
+    pictureContainer.appendChild(img);
+    pictureContainer.appendChild(removeBtn);
+    pictureGallery.appendChild(pictureContainer);
+  }
+
   if (addPictureBtn && pictureInput) {
     addPictureBtn.addEventListener('click', () => {
       pictureInput.click();
     });
   }
 
-  // --- Handle Image Upload ---
   if (pictureInput && pictureGallery && uploadProgressBar) {
     pictureInput.addEventListener('change', function () {
       const file = this.files[0];
@@ -93,24 +126,9 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(interval);
             uploadProgressBar.classList.add('hidden');
 
-            const pictureContainer = document.createElement('div');
-            pictureContainer.className = 'picture-container';
+            addImageToGallery(e.target.result);
+            saveImagesToStorage();
 
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.className = 'uploaded-picture';
-
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Remove';
-            removeBtn.className = 'remove-picture-btn';
-
-            removeBtn.addEventListener('click', () => {
-              pictureGallery.removeChild(pictureContainer);
-            });
-
-            pictureContainer.appendChild(img);
-            pictureContainer.appendChild(removeBtn);
-            pictureGallery.appendChild(pictureContainer);
             pictureInput.value = ''; // Reset input
           }
         }, 50);
@@ -120,7 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Load images on page load
+  loadSavedImages();
+
   // --- Prayers ---
+
+  // --- Prayer Elements ---
+  const generatePrayerBtn = document.getElementById('generatePrayerBtn');
+  const prayerOutput = document.getElementById('prayerOutput');
+  const generatePrayerBtn2 = document.getElementById('generatePrayerBtn2');
+  const prayerOutput2 = document.getElementById('prayerOutput2');
 
 const bibleverses = [
     "Philippians 4:13 - I can do all things through Christ who strengthens me.",
