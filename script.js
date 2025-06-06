@@ -208,6 +208,7 @@ const bibleverses = [
       "Dear father in Heaven, I pray that Amber finds the peace that she is looking for in life with and without me.",
       "Father Jesus, I pray that Amber finds the strength to overcome any obstacles in her life.",
       "Father in Heaven, You know that I love her very much, with all my heart. And I pray that you bless her with the love and happiness that she deserves.",
+      "Dear God, I ask that you protect and give peace to Amber and her family, and that you bless them with your love and grace.",
     ];
 
   if (generatePrayerBtn && prayerOutput) {
