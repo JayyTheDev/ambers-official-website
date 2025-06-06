@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
+  fetch("/.netlify/functions/logVisit")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log("Visit logged:", data);
+  })
+  .catch((err) => {
+    console.error("Visit log failed:", err);
+  });
+  
   // --- Modal Elements ---
   const signupModal = document.getElementById("signupModal");
   const confirmModal = document.getElementById("confirmModal");
