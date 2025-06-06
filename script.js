@@ -205,7 +205,10 @@ const bibleverses = [
       "Father in Heaven, I pray that you heal Amber's heart and give her peace in her soul.",
       "Dear God, may Amber always find comfort in Your love and strength in Your presence.",
       "Father, I ask that you watch over Amber and her family, protect them from the harm and evil this world produces.",
-  ];
+      "Dear father in Heaven, I pray that Amber finds the peace that she is looking for in life with and without me.",
+      "Father Jesus, I pray that Amber finds the strength to overcome any obstacles in her life.",
+      "Father in Heaven, You know that I love her very much, with all my heart. And I pray that you bless her with the love and happiness that she deserves.",
+    ];
 
   if (generatePrayerBtn && prayerOutput) {
     generatePrayerBtn.addEventListener('click', () => {
