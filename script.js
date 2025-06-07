@@ -30,27 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
 
-    if (username && password) {
-      // Send data to Netlify Function
-      fetch("/.netlify/functions/logSignup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Signup logged:", data);
-
-        // Continue with modal logic
-        document.body.style.overflow = "hidden";
-        signupModal.classList.add("hidden");
-        confirmModal.classList.remove("hidden");
-      })
-      .catch((err) => {
-        console.error("Signup logging failed:", err);
-      });
+       if (username && password) {
+      document.body.style.overflow = "hidden";
+      signupModal.classList.add("hidden");
+      confirmModal.classList.remove("hidden");
     }
   });
 
