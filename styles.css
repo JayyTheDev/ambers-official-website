@@ -142,7 +142,7 @@ header {
   min-height: 450px;
   max-width: 900px;
   gap: 30px;
-  background-color: #ffffffcc;
+  background-color: #000000cc;
   padding: 5px;
   border-radius: 15px;
   box-shadow: 2px 2px 2px black;
@@ -173,7 +173,7 @@ header {
 .first-picture-text,
 .second-picture-text {
   max-width: 400px;
-  color: #33475b;
+  color: #ffffff;
   font-size: 18px;
   line-height: 1.6;
   font-weight: 400;
