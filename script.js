@@ -295,6 +295,70 @@ const bibleverses = [
     });
   }
 
+  // User Notes Section
+  const noteInput = document.getElementById("noteInput");
+  const addNoteBtn = document.getElementById("addNoteBtn");
+  const notesList = document.getElementById("notesList");
+
+  // Load saved notes from localStorage on page load
+  const savedNotes = JSON.parse(localStorage.getItem("userNotes")) || [];
+  savedNotes.forEach(note => addNoteToList(note));
+
+  // Add new note when button clicked
+  addNoteBtn.addEventListener("click", () => {
+    const noteText = noteInput.value.trim();
+    if (noteText !== "") {
+      addNoteToList(noteText);
+      saveNote(noteText);
+      noteInput.value = "";
+    }
+  });
+
+  // Function to add note div to the list with remove button
+  function addNoteToList(text) {
+    const noteDiv = document.createElement("div");
+    noteDiv.className = "note";
+
+    // Create span for note text
+    const noteTextSpan = document.createElement("span");
+    noteTextSpan.textContent = text;
+
+    // Create remove button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.className = "removeBtn";
+
+    // Remove note on button click
+    removeBtn.addEventListener("click", () => {
+      notesList.removeChild(noteDiv);
+      removeNoteFromStorage(text);
+    });
+
+    // Append text and button to note div
+    noteDiv.appendChild(noteTextSpan);
+    noteDiv.appendChild(removeBtn);
+
+    // Append note div to notes list
+    notesList.appendChild(noteDiv);
+  }
+
+  // Save note to localStorage
+  function saveNote(text) {
+    const savedNotes = JSON.parse(localStorage.getItem("userNotes")) || [];
+    savedNotes.push(text);
+    localStorage.setItem("userNotes", JSON.stringify(savedNotes));
+  }
+
+  // Remove note from localStorage
+  function removeNoteFromStorage(text) {
+    let savedNotes = JSON.parse(localStorage.getItem("userNotes")) || [];
+    const index = savedNotes.indexOf(text);
+    if (index > -1) {
+      savedNotes.splice(index, 1);
+      localStorage.setItem("userNotes", JSON.stringify(savedNotes));
+    }
+  }
+
   // Initialize first slide
   updateAboutSlide();
 });

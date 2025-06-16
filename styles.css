@@ -397,6 +397,64 @@ header {
   overflow: auto; /* allow scrolling if content overflows */
 }
 
+#noteInput {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #000000;
+}
+
+#addNoteBtn {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background: linear-gradient(#4e54c8, #8f94fb);
+  color: white;
+  border: 2px solid #000000;
+  border-radius: 5px ;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#addNoteBtn:hover {
+  background-color: #45a049;
+}
+
+#notesList {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.note {
+  background-color: rgba(255, 255, 255) ;
+  color: black;
+  border: 2px solid #000000;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.removeBtn {
+  margin-left: 15px;
+  cursor: pointer;
+  background: linear-gradient(#f51800, #571313);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.removeBtn:hover {
+  background: linear-gradient(#f51800, #000000);
+}
+
 footer {
   background: linear-gradient( #8f94fb, #4e54c8 );
   padding: 20px;
