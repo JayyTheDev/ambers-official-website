@@ -220,6 +220,7 @@ const bibleverses = [
       "Father in Heaven, You know that I love her very much, with all my heart. And I pray that you bless her with the love and happiness that she deserves.",
       "Dear God, I ask that you protect and give peace to Amber and her family, and that you bless them with your love and grace.",
       "Father in Heaven, If you ever gave me and Amber the choice to go to Heaven or Hell, I would much rather choose to go and have eternal suffering in Hell, so Amber can have everlasting life in Heaven with you. She genuinely deserves peace and happiness, and I am willing to endure pain and suffering for her so she doesn't have to.",
+      "Our Father in Heaven, How Merciful and Loving you are, with the Comfort of Your Presence. I just ask that you watch over Amber everyday when she is sleeping Father, send your Heavenly Angels down to keep her safe as she is resting, so that she may feel the protection of You and your Angels, by giving her peace and comfort in her sleep. Please keep her protected and safe. Please. ❤️",
     ];
 
   if (generatePrayerBtn && prayerOutput) {
